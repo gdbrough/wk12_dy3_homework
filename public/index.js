@@ -14,20 +14,22 @@ const requestComplete = function(){
 
 const populateList = function(beers){
   const ul = document.getElementById("beer-list");
-  for (let index in beers){
+  // for (let index in beers){
+  beers.forEach(function(beer){
     let li = document.createElement("li");
-    li.innerHTML = "<h2>" + beers[index].name + "</h2>";
+    li.innerHTML = "<h2>" + beer.name + "</h2>";
     let photo = document.createElement("li");
-    photo.innerHTML = "<img src=\"" + beers[index].image_url + "\">"
+    photo.innerHTML = "<img src=\"" + beer.image_url + "\">"
     let ingredients = document.createElement("li");
-    ingredients.innerHTML = displayIngredients(beers[index].ingredients);
+    ingredients.innerHTML = displayIngredients(beer.ingredients);
     let divider = document.createElement("li");
     divider.innerHTML = "<hr />";
     ul.appendChild(li);
     ul.appendChild(photo);
     ul.appendChild(ingredients);
     ul.appendChild(divider);
-  };
+  });
+  // };
 };
 
 const displayIngredients = function(ingredients){
