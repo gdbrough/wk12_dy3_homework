@@ -14,7 +14,6 @@ const requestComplete = function(){
 
 const populateList = function(beers){
   const ul = document.getElementById("beer-list");
-  // for (let index in beers){
   beers.forEach(function(beer){
     let li = document.createElement("li");
     li.innerHTML = "<h2>" + beer.name + "</h2>";
@@ -29,7 +28,6 @@ const populateList = function(beers){
     ul.appendChild(ingredients);
     ul.appendChild(divider);
   });
-  // };
 };
 
 const displayIngredients = function(ingredients){
