@@ -1,0 +1,21 @@
+body {
+  background-color: lightgoldenrodyellow;
+}
+
+img {
+  padding-top: 15px;
+  width: 100px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+h3 {
+  margin-top: 5px;
+  margin-bottom: 2px;
+}

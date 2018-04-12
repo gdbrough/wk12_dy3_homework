@@ -16,11 +16,11 @@ const populateList = function(beers){
   const ul = document.getElementById("beer-list");
   for (let index in beers){
     let li = document.createElement("li");
-    li.innerHTML = "<b>" + beers[index].name + "</b>";
+    li.innerHTML = "<h2>" + beers[index].name + "</h2>";
     let photo = document.createElement("li");
     photo.innerHTML = "<img src=\"" + beers[index].image_url + "\">"
     let ingredients = document.createElement("li");
-    ingredients.innerText = displayIngredients(beers[index].ingredients);
+    ingredients.innerHTML = displayIngredients(beers[index].ingredients);
     let divider = document.createElement("li");
     divider.innerHTML = "<hr />";
     ul.appendChild(li);
@@ -31,20 +31,20 @@ const populateList = function(beers){
 };
 
 const displayIngredients = function(ingredients){
-  // console.log(ingredients.malt[0].name);
-  // const ingrediantsList = document.getElementById("ingrediants-list")
-  // while(ingrediantsList.firstChild){
-  //   ingrediantsList.removeChild(ingrediantsList.firstChild);
-  // }
-  // const paragraph = document.createElement("p");
+  let malts = [];
   for (let malt of ingredients.malt){
-  // ingredients.forEach(function(ingredient){
-    // ingredient.forEach(function())
-    console.log(malt);
+    malts.push(malt.name);
   };
-  let ingredient = ingredients.malt[0].name;
-  // ingrediantsList.appendChild(paragraph)
-  return ingredient;
+
+  let hops = [];
+  for (let hop of ingredients.hops){
+    hops.push(hop.name);
+  };
+
+  return "<h3>Ingredients:</h3>" +
+    "<br />Malts: " + malts.join(", ") +
+    "<br />Hops: " + hops.join(", ") +
+    "<br />Yeast: " + ingredients.yeast;
 };
 
 
