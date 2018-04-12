@@ -42,7 +42,7 @@ const displayIngredients = function(ingredients){
   };
 
   return "<h3>Ingredients:</h3>" +
-    "<br />Malts: " + malts.join(", ") +
+    "Malts: " + malts.join(", ") +
     "<br />Hops: " + hops.join(", ") +
     "<br />Yeast: " + ingredients.yeast;
 };
